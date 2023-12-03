@@ -14,7 +14,7 @@ const Table = () => {
   const slicedFilered = filtered.slice(((page * 10) - 10) ,page*10 );
 
   return (
-    <table className="flex flex-col border-2 border-slate-200 border-collapse rounded-lg font-sans">
+    <table className="relative flex flex-col border-2 border-slate-200 border-collapse rounded-lg font-sans">
       <TableHead />
       <tbody>
         {filtered.length ? (
