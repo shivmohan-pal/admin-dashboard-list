@@ -24,6 +24,10 @@ const Pagination = () => {
     pageDispatch({type:"last",payload:{totalPages}});
   };
 
+  const numClick =(num)=>{
+    pageDispatch({type:"numClick",payload:{num}});
+  }
+
   return (
     <div className="flex items-center flex-wrap justify-between mt-3 p-2">
       <p className="text-base text-slate-500">
@@ -54,6 +58,7 @@ const Pagination = () => {
               className={`w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-50 ${
                 page === c ? "border-slate-900" : ""
               } hover:border-slate-900`}
+              onClick={()=>numClick(c)}
             >
               {c}
             </button>
