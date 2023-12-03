@@ -27,11 +27,15 @@ const SearchBar = () => {
     
     dispatch({type:"filter",payload:{filtered}});
     dispatch({type:"setSearch",payload:{search}});
+
+    
+  }, [search,data]);
+
+  useEffect(()=>{
     // if(!search) {
       pageDispatch({type:"reboot"})
     // }
-    
-  }, [search,data]);
+  },[search])
 
   return (
     <input

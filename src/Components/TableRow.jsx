@@ -31,7 +31,7 @@ const TableRow = ({ id, name, email, role, isChecked }) => {
   return (
     <tr
       className={`flex items-center gap-6 justify-between border-b-2 border-slate-200 p-3 ${
-        isChecked ? "bg-slate-100" : ""
+        isChecked ? "bg-slate-100" : "hover:bg-slate-100"
       } text-slate-950 last:border-none`}
     >
       <td className="font-normal flex-none">
