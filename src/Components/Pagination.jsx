@@ -40,14 +40,14 @@ const Pagination = () => {
         <div className="flex gap-2 items-center">
           <button
             title="first"
-            className={`first-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-50 ${page===1 ? "opacity-50" : ""} hover:border-slate-900`}
+            className={`first-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-30 ${page===1 ? "opacity-30" : ""} hover:border-slate-900`}
             onClick={firstPage}
 
           >
             {"<<"}
           </button>
           <button
-            className={`previous-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-50 ${page===1 ? "opacity-50" : ""} hover:border-slate-900`}
+            className={`previous-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-30 ${page===1 ? "opacity-30" : ""} hover:border-slate-900`}
             onClick={prevPage}
           >
             {"<"}
@@ -55,8 +55,8 @@ const Pagination = () => {
           {numbersArray(totalPages).map((c) => (
             <button
               key={c}
-              className={`w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-50 ${
-                page === c ? "border-slate-900" : ""
+              className={`w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-30 ${
+                page === c ? "bg-slate-200" : ""
               } hover:border-slate-900`}
               onClick={()=>numClick(c)}
             >
@@ -64,14 +64,14 @@ const Pagination = () => {
             </button>
           ))}
           <button
-            className={`next-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-50 ${page===totalPages ? "opacity-50" : ""} hover:border-slate-900`}
+            className={`next-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-30 ${page===totalPages ? "opacity-30" : ""} hover:border-slate-900`}
             onClick={nextPage}
           >
             {">"}
           </button>
           <button
             title="last"
-            className={`last-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-50 ${page===totalPages ? "opacity-50" : ""} hover:border-slate-900`}
+            className={`last-page w-8 h-8 border-2 border-slate-200 rounded-md active:opacity-30 ${page===totalPages ? "opacity-30" : ""} hover:border-slate-900`}
             onClick={lastPage}
           >
             {">>"}
