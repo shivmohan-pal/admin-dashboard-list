@@ -1,18 +1,14 @@
 import { isAllSelected } from "../Config/functions";
 import useData from "../Context/DataContext";
 
-const TableHead = () => {
- const {data:entries,dispatch} = useData();
- const {data} = entries;
+const TableHead = ({displayedData}) => {
+ const {dispatch} = useData();
  
  const checkboxClick = (e)=>{
   const value = e.target.checked;
-  if(value){
-  dispatch({type:'allCheck',payload: {value}})
-  }
-  if(isAllSelected(data)){
-    dispatch({type:"allUnCheck",payload:{value}});
-  }
+
+  dispatch({type:'allCheck',payload: {value ,displayedData}})
+
   dispatch({type:"unlockManyDelete"})
 }
 
@@ -24,7 +20,7 @@ const TableHead = () => {
           <input id="allCheck" className="accent-red-500 w-4 h-4 align-middle" 
           type="checkbox"
           onChange={checkboxClick}
-          // checked={allCheckButton}
+          checked={isAllSelected(displayedData)}
            />
         </th>
         <th className="font-normal text-base flex-1 text-left">

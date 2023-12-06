@@ -15,12 +15,12 @@ const dataReducer = (state, action) => {
     case "edit":
       return {
         ...state,
-        data : state.data.map((elm)=>{
-          if(elm.id===payload.id){
-            return {...elm,...payload.editForm}
+        data: state.data.map((elm) => {
+          if (elm.id === payload.id) {
+            return { ...elm, ...payload.editForm };
           }
-          return elm
-        })
+          return elm;
+        }),
       };
     case "remove":
       return {
@@ -56,17 +56,14 @@ const dataReducer = (state, action) => {
         ...state,
         allCheckButton: payload.value,
         data: state.data.map((el) => {
-          return { ...el, isChecked: payload.value };
+          for (let i = 0; i < payload.displayedData.length; i++) {
+            if (payload.displayedData[i].id === el.id)
+              return { ...el, isChecked: payload.value };
+          }
+          return el;
         }),
       };
-    case "allUnCheck":
-      return {
-        ...state,
-        allCheckButton: payload.value,
-        data: state.data.map((el) => {
-          return { ...el, isChecked: payload.value };
-        }),
-      };
+
     case "filter":
       return {
         ...state,
